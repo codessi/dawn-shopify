@@ -38,6 +38,7 @@
       ],
       "settings": {
         "image": "shopify:\/\/shop_images\/section-one.png",
+        "image-link": "",
         "image_overlay_opacity": 0,
         "image_height": "large",
         "adapt_height_first_image": true,
@@ -107,7 +108,6 @@
       ],
       "settings": {
         "title": "",
-        "columns_desktops": 3,
         "image_width": "full",
         "image_ratio": "square",
         "columns_desktop": 4,
@@ -164,7 +164,6 @@
       ],
       "settings": {
         "title": "",
-        "columns_desktops": 3,
         "image_width": "full",
         "image_ratio": "square",
         "columns_desktop": 4,
@@ -213,6 +212,7 @@
       ],
       "settings": {
         "image": "shopify:\/\/shop_images\/cities_collage.png",
+        "image-link": "",
         "image_overlay_opacity": 0,
         "image_height": "medium",
         "adapt_height_first_image": true,
@@ -236,7 +236,7 @@
         "collection": "all",
         "products_to_show": 12,
         "columns_desktop": 4,
-        "full_width": false,
+        "full_width": true,
         "show_view_all": true,
         "view_all_style": "solid",
         "enable_desktop_slider": true,
@@ -263,7 +263,7 @@
         "collection": "all",
         "products_to_show": 12,
         "columns_desktop": 4,
-        "full_width": false,
+        "full_width": true,
         "show_view_all": true,
         "view_all_style": "solid",
         "enable_desktop_slider": true,
@@ -275,7 +275,7 @@
         "enable_quick_add": false,
         "columns_mobile": "2",
         "swipe_on_mobile": false,
-        "padding_top": 8,
+        "padding_top": 0,
         "padding_bottom": 8
       }
     },
@@ -374,6 +374,7 @@
       ],
       "settings": {
         "image": "shopify:\/\/shop_images\/hoodie_banner.png",
+        "image-link": "shopify:\/\/collections\/all",
         "image_overlay_opacity": 0,
         "image_height": "medium",
         "adapt_height_first_image": false,
@@ -640,6 +641,7 @@
       ],
       "settings": {
         "image": "shopify:\/\/shop_images\/DAXTON_DESIGN.png",
+        "image-link": "",
         "image_overlay_opacity": 0,
         "image_height": "medium",
         "adapt_height_first_image": true,
@@ -901,6 +903,7 @@
       ],
       "settings": {
         "image": "shopify:\/\/shop_images\/daxton-backdrop_Frame.png",
+        "image-link": "",
         "image_overlay_opacity": 30,
         "image_height": "small",
         "adapt_height_first_image": false,
