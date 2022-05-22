@@ -60,118 +60,6 @@
         "padding_bottom": 16
       }
     },
-    "1652996718664efd58": {
-      "type": "multicolumn-button",
-      "blocks": {
-        "165299671834fe71a9-0": {
-          "type": "column",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/Los_Angeles.jpg",
-            "title": "",
-            "button_link": "shopify:\/\/collections\/all",
-            "text": ""
-          }
-        },
-        "165299671834fe71a9-1": {
-          "type": "column",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/new_yort.jpg",
-            "title": "",
-            "button_link": "",
-            "text": ""
-          }
-        },
-        "165299671834fe71a9-2": {
-          "type": "column",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/chicago.jpg",
-            "title": "",
-            "button_link": "",
-            "text": ""
-          }
-        },
-        "a03575d1-10f5-4921-8955-247925363992": {
-          "type": "column",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/huston.jpg",
-            "title": "",
-            "button_link": "",
-            "text": ""
-          }
-        }
-      },
-      "block_order": [
-        "165299671834fe71a9-0",
-        "165299671834fe71a9-1",
-        "165299671834fe71a9-2",
-        "a03575d1-10f5-4921-8955-247925363992"
-      ],
-      "settings": {
-        "title": "",
-        "image_width": "full",
-        "image_ratio": "square",
-        "columns_desktop": 4,
-        "column_alignment": "left",
-        "background_style": "primary",
-        "swipe_on_mobile": false
-      }
-    },
-    "1652993516c097905f": {
-      "type": "multicolumn-button",
-      "blocks": {
-        "16529935164580f6de-0": {
-          "type": "column",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/detroit.jpg",
-            "title": "",
-            "button_link": "shopify:\/\/collections",
-            "text": ""
-          }
-        },
-        "16529935164580f6de-1": {
-          "type": "column",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/dallas.jpg",
-            "title": "",
-            "button_link": "",
-            "text": ""
-          }
-        },
-        "16529935164580f6de-2": {
-          "type": "column",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/alabama.jpg",
-            "title": "",
-            "button_link": "",
-            "text": ""
-          }
-        },
-        "8bc8ca9e-6baf-4526-a166-ee49761a4199": {
-          "type": "column",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/more.jpg",
-            "title": "",
-            "button_link": "",
-            "text": ""
-          }
-        }
-      },
-      "block_order": [
-        "16529935164580f6de-0",
-        "16529935164580f6de-1",
-        "16529935164580f6de-2",
-        "8bc8ca9e-6baf-4526-a166-ee49761a4199"
-      ],
-      "settings": {
-        "title": "",
-        "image_width": "full",
-        "image_ratio": "square",
-        "columns_desktop": 4,
-        "column_alignment": "left",
-        "background_style": "primary",
-        "swipe_on_mobile": false
-      }
-    },
     "16527280304e2e862f": {
       "type": "image-banner",
       "disabled": true,
@@ -439,19 +327,20 @@
         "image_width": "full",
         "image_ratio": "square",
         "columns_desktop": 4,
-        "column_alignment": "left",
+        "column_alignment": "center",
         "background_style": "primary",
         "button_label": "",
         "button_link": "",
         "color_scheme": "background-1",
         "columns_mobile": "1",
         "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 16
+        "padding_top": 76,
+        "padding_bottom": 80
       }
     },
     "1652894851ebdc465e": {
       "type": "featured-product",
+      "disabled": true,
       "blocks": {
         "1652894851af65e9c4-0": {
           "type": "text",
@@ -522,7 +411,84 @@
         "secondary_background": false,
         "hide_variants": false,
         "enable_video_looping": false,
-        "padding_top": 60,
+        "padding_top": 100,
+        "padding_bottom": 36
+      }
+    },
+    "16532560100516c2d0": {
+      "type": "featured-product-left",
+      "blocks": {
+        "1653256010b48676e0-0": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "{{ section.settings.product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
+        "1653256010b48676e0-1": {
+          "type": "title",
+          "settings": {
+            "heading_size": "h1"
+          }
+        },
+        "1653256010b48676e0-2": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "{{ section.settings.product.metafields.descriptors.subtitle.value }}",
+            "text_style": "subtitle"
+          }
+        },
+        "1653256010b48676e0-3": {
+          "type": "price",
+          "settings": {
+          }
+        },
+        "1653256010b48676e0-4": {
+          "type": "variant_picker",
+          "disabled": true,
+          "settings": {
+            "picker_type": "button"
+          }
+        },
+        "1653256010b48676e0-5": {
+          "type": "quantity_selector",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "1653256010b48676e0-6": {
+          "type": "buy_buttons",
+          "disabled": true,
+          "settings": {
+            "show_dynamic_checkout": true
+          }
+        },
+        "1653256010b48676e0-7": {
+          "type": "share",
+          "settings": {
+            "share_label": "Share"
+          }
+        }
+      },
+      "block_order": [
+        "1653256010b48676e0-0",
+        "1653256010b48676e0-1",
+        "1653256010b48676e0-2",
+        "1653256010b48676e0-3",
+        "1653256010b48676e0-4",
+        "1653256010b48676e0-5",
+        "1653256010b48676e0-6",
+        "1653256010b48676e0-7"
+      ],
+      "settings": {
+        "product": "daxton-usa-cities-bucket-hat-cap-fisherman-headwear-cap",
+        "color_scheme": "background-1",
+        "secondary_background": false,
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 36,
         "padding_bottom": 36
       }
     },
@@ -598,7 +564,7 @@
         "secondary_background": false,
         "hide_variants": false,
         "enable_video_looping": false,
-        "padding_top": 36,
+        "padding_top": 0,
         "padding_bottom": 36
       }
     },
@@ -778,12 +744,12 @@
       ],
       "settings": {
         "title": "",
-        "heading_size": "h1",
+        "heading_size": "h0",
         "image_width": "full",
         "image_ratio": "adapt",
         "columns_desktop": 4,
-        "column_alignment": "left",
-        "background_style": "primary",
+        "column_alignment": "center",
+        "background_style": "none",
         "button_label": "",
         "button_link": "",
         "color_scheme": "background-1",
@@ -954,8 +920,6 @@
   "order": [
     "image_banner",
     "16527277571af59856",
-    "1652996718664efd58",
-    "1652993516c097905f",
     "16527280304e2e862f",
     "1652891445815d5876",
     "16528914578f474a22",
@@ -964,6 +928,7 @@
     "1652728627b647e94d",
     "16529071364b62918a",
     "1652894851ebdc465e",
+    "16532560100516c2d0",
     "16528956793f2eafcd",
     "16528987002315cb66",
     "1652731727b0433b69",

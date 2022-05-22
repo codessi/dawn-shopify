@@ -32,7 +32,50 @@
 
 <section class="color-{{ section.settings.color_scheme }} {% if section.settings.secondary_background %}background-secondary{% else %}gradient{% endif %}">
   <div style="margin-left: 10%""="page-width section-{{ section.id }}-padding{% if section.settings.secondary_background %} isolate{% endif %}">
-    <div class="featured-product product grid grid--1-col gradient color-{{ section.settings.color_scheme }}{% if section.settings.secondary_background == false %} isolate{% endif %} {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">      <div class="product__info-wrapper grid__item">
+    <div class="featured-product product grid grid--1-col gradient color-{{ section.settings.color_scheme }}{% if section.settings.secondary_background == false %} isolate{% endif %} {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
+      <div class="grid__item product__media-wrapper" style="width:15%">
+        <media-gallery id="MediaGallery-{{ section.id }}" role="region" aria-label="{{ 'products.product.media.gallery_viewer' | t }}" data-desktop-layout="stacked">
+          <a class="skip-to-content-link button visually-hidden" href="#ProductInfo-{{ section.id }}">
+            {{ "accessibility.skip_to_product_info" | t }}
+          </a>
+          <div id="GalleryViewer-{{ section.id }}" class="product__media-list">
+            {%- if product.selected_or_first_available_variant.featured_media != null -%}
+              {%- assign media = product.selected_or_first_available_variant.featured_media -%}
+              <div class="product__media-item" data-media-id="{{ section.id }}-{{ media.id }}">
+                {% render 'product-thumbnail', media: media, position: 'featured', loop: section.settings.enable_video_looping, modal_id: section.id, xr_button: false, media_width: 0.5 %}
+              </div>
+            {%- endif -%}
+            {%- liquid
+              assign media_to_render = product.featured_media.id
+              for variant in product.variants
+                assign media_to_render = media_to_render | append: variant.featured_media.id | append: ' '
+              endfor
+            -%}
+            {%- for media in product.media -%}
+              {%- if media_to_render contains media.id and media.id != product.selected_or_first_available_variant.featured_media.id -%}
+                <div class="product__media-item" data-media-id="{{ section.id }}-{{ media.id }}">
+                  {% render 'product-thumbnail', media: media, position: forloop.index, loop: section.settings.enable_video_looping, modal_id: section.id, xr_button: false, media_width: 0.5 %}
+                </div>
+              {%- endif -%}
+            {%- endfor -%}
+          </div>
+          {%- if first_3d_model -%}
+            <button
+              class="button button--full-width product__xr-button"
+              type="button"
+              aria-label="{{ 'products.product.xr_button_label' | t }}"
+              data-shopify-xr
+              data-shopify-model3d-id="{{ first_3d_model.id }}"
+              data-shopify-title="{{ product.title | escape }}"
+              data-shopify-xr-hidden
+            >
+              {% render 'icon-3d-model' %}
+              {{ 'products.product.xr_button' | t }}
+            </button>
+          {%- endif -%}
+        </media-gallery>
+      </div>
+      <div class="product__info-wrapper grid__item">
         <div id="ProductInfo-{{ section.id }}" class="product__info-container">
           {%- assign product_form_id = 'product-form-' | append: section.id -%}
 
@@ -300,49 +343,6 @@
         </a>
         </div>
       </div>
-      <div class="grid__item product__media-wrapper" style="width:15%">
-        <media-gallery id="MediaGallery-{{ section.id }}" role="region" aria-label="{{ 'products.product.media.gallery_viewer' | t }}" data-desktop-layout="stacked">
-          <a class="skip-to-content-link button visually-hidden" href="#ProductInfo-{{ section.id }}">
-            {{ "accessibility.skip_to_product_info" | t }}
-          </a>
-          <div id="GalleryViewer-{{ section.id }}" class="product__media-list">
-            {%- if product.selected_or_first_available_variant.featured_media != null -%}
-              {%- assign media = product.selected_or_first_available_variant.featured_media -%}
-              <div class="product__media-item" data-media-id="{{ section.id }}-{{ media.id }}">
-                {% render 'product-thumbnail', media: media, position: 'featured', loop: section.settings.enable_video_looping, modal_id: section.id, xr_button: false, media_width: 0.5 %}
-              </div>
-            {%- endif -%}
-            {%- liquid
-              assign media_to_render = product.featured_media.id
-              for variant in product.variants
-                assign media_to_render = media_to_render | append: variant.featured_media.id | append: ' '
-              endfor
-            -%}
-            {%- for media in product.media -%}
-              {%- if media_to_render contains media.id and media.id != product.selected_or_first_available_variant.featured_media.id -%}
-                <div class="product__media-item" data-media-id="{{ section.id }}-{{ media.id }}">
-                  {% render 'product-thumbnail', media: media, position: forloop.index, loop: section.settings.enable_video_looping, modal_id: section.id, xr_button: false, media_width: 0.5 %}
-                </div>
-              {%- endif -%}
-            {%- endfor -%}
-          </div>
-          {%- if first_3d_model -%}
-            <button
-              class="button button--full-width product__xr-button"
-              type="button"
-              aria-label="{{ 'products.product.xr_button_label' | t }}"
-              data-shopify-xr
-              data-shopify-model3d-id="{{ first_3d_model.id }}"
-              data-shopify-title="{{ product.title | escape }}"
-              data-shopify-xr-hidden
-            >
-              {% render 'icon-3d-model' %}
-              {{ 'products.product.xr_button' | t }}
-            </button>
-          {%- endif -%}
-        </media-gallery>
-      </div>
-
     </div>
     <product-modal id="ProductModal-{{ section.id }}" class="product-media-modal media-modal">
       <div class="product-media-modal__dialog" role="dialog" aria-label="{{ 'products.modal.label' | t }}" aria-modal="true" tabindex="-1">
@@ -457,7 +457,7 @@
 
 {% schema %}
 {
-  "name": "t:sections.featured-product.name",
+  "name": "Featured Product Left",
   "tag": "section",
   "class": "section section-featured-product",
   "blocks": [
@@ -698,7 +698,7 @@
   ],
   "presets": [
     {
-      "name": "t:sections.featured-product.presets.name",
+      "name": "Featured product left",
       "blocks": [
         {
           "type": "text",
